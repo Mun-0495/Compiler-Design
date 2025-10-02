@@ -1,0 +1,7 @@
+.vscode/
+*.DS_Store
+
+# Not add binaries or build files
+*.o
+Assignment1/compiler_project/cminus_cimpl
+Assignment1/compiler_project/cminus_lex
