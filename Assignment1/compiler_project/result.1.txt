@@ -1,5 +1,5 @@
 
-C-MINUS COMPILATION: ./test.1.txt
+C-MINUS COMPILATION: test.1.txt
 	4: reserved word: int
 	4: ID, name= gcd
 	4: (
@@ -70,4 +70,4 @@ C-MINUS COMPILATION: ./test.1.txt
 	15: )
 	15: ;
 	16: }
-	17: EOF
+	18: EOF

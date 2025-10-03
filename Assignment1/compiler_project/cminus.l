@@ -19,7 +19,6 @@ letter      [a-zA-Z]
 identifier  {letter}+
 newline     \n
 whitespace  [ \t]+
-%x          COMMENT
 
 %%
 
@@ -48,12 +47,21 @@ whitespace  [ \t]+
 {identifier}    {return ID;}
 {newline}       {lineno++;}
 {whitespace}    {/* skip whitespace */}
+"/*"            { 
+                  char c;
+                  while(1) {
+                    c = input();
+                    if (c == 0) break;
+                    if (c == '\n') lineno++;
+
+                    if (c == '*') {
+                      c = input();
+                      if (c == 0) break;
+                      else if (c == '/') break;
+                    }
+                  }
+                }
 .               {return ERROR;}
-"/*"                { BEGIN(COMMENT); }   /* 주석 시작 */
-<COMMENT>"*/"       { BEGIN(INITIAL); }   /* 주석 끝 */
-<COMMENT>\n         { lineno++; }         /* 개행만 카운트 */
-<COMMENT>.          { /* 그냥 무시 */ }   /* 다른 문자들 무시 */
-<COMMENT><<EOF>>    { return ENDFILE; }   /* EOF */
 
 %%
 

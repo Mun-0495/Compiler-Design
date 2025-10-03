@@ -49,7 +49,8 @@ C-MINUS COMPILATION: test.2.txt
 	14: reserved word: while
 	14: (
 	14: ID, name= i
-	14: <=
+	14: <
+	14: =
 	14: NUM, val= 4
 	14: )
 	15: {
@@ -59,7 +60,8 @@ C-MINUS COMPILATION: test.2.txt
 	16: [
 	16: ID, name= i
 	16: ]
-	16: !=
+	16: ERROR: !
+	16: =
 	16: NUM, val= 0
 	16: )
 	17: {
@@ -73,17 +75,5 @@ C-MINUS COMPILATION: test.2.txt
 	18: ;
 	19: }
 	20: }
-	22: reserved word: int
-	22: ID, name= a
-	22: =
-	22: NUM, val= 1
-	22: ;
-	23: ID, name= a
-	23: =
-	23: ID, name= a
-	23: <
-	23: <
-	23: NUM, val= 2
-	23: ;
-	24: }
-	25: EOF
+	22: }
+	23: EOF
