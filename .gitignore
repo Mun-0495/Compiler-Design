@@ -5,3 +5,6 @@
 *.o
 Assignment1/compiler_project/cminus_cimpl
 Assignment1/compiler_project/cminus_lex
+
+lex.yy.c
+y.tab.c
