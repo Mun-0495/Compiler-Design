@@ -2,192 +2,38 @@
 C-MINUS COMPILATION: test.1.txt
 
 Syntax tree:
-TreeNode Type: 2
-TreeNode LineNo: 4
-  Function Declaration: name = gcd, return type = void
-TreeNode Type: 4
-TreeNode LineNo: 4
-    Type: int
-TreeNode Type: 3
-TreeNode LineNo: 4
+  Function Declaration: name = gcd, return type = int
     Parameter: name = u, type = int
-TreeNode Type: 4
-TreeNode LineNo: 4
-      Type: int
-TreeNode Type: 3
-TreeNode LineNo: 4
     Parameter: name = v, type = int
-TreeNode Type: 4
-TreeNode LineNo: 4
-      Type: int
-TreeNode Type: 0
-TreeNode LineNo: 9
     Compound Statement:
-TreeNode Type: 0
-TreeNode LineNo: 7
       If-Else Statement:
-TreeNode Type: 1
-TreeNode LineNo: 6
         Op: ==
-TreeNode Type: 1
-TreeNode LineNo: 6
           Variable: name = v
-TreeNode Type: 1
-TreeNode LineNo: 6
           Const: 0
-TreeNode Type: 0
-TreeNode LineNo: 6
         Return Statement:
-TreeNode Type: 1
-TreeNode LineNo: 6
           Variable: name = u
-TreeNode Type: 0
-TreeNode LineNo: 7
         Return Statement:
-TreeNode Type: 1
-TreeNode LineNo: 7
-          Printing CallK Node
-Function Name: v
-First Child: 0xaaaaf28a2a20
-Call: function name = v
-TreeNode Type: 1
-TreeNode LineNo: 7
+          Call: function name = gcd
             Variable: name = v
-TreeNode Type: 1
-TreeNode LineNo: 7
             Op: -
-TreeNode Type: 1
-TreeNode LineNo: 7
               Variable: name = u
-TreeNode Type: 1
-TreeNode LineNo: 7
               Op: *
-TreeNode Type: 1
-TreeNode LineNo: 7
                 Op: /
-TreeNode Type: 1
-TreeNode LineNo: 7
                   Variable: name = u
-TreeNode Type: 1
-TreeNode LineNo: 7
                   Variable: name = v
-TreeNode Type: 1
-TreeNode LineNo: 7
                 Variable: name = v
-TreeNode Type: 1
-TreeNode LineNo: 7
-            Variable: name = v
-TreeNode Type: 1
-TreeNode LineNo: 7
-            Op: -
-TreeNode Type: 1
-TreeNode LineNo: 7
-              Variable: name = u
-TreeNode Type: 1
-TreeNode LineNo: 7
-              Op: *
-TreeNode Type: 1
-TreeNode LineNo: 7
-                Op: /
-TreeNode Type: 1
-TreeNode LineNo: 7
-                  Variable: name = u
-TreeNode Type: 1
-TreeNode LineNo: 7
-                  Variable: name = v
-TreeNode Type: 1
-TreeNode LineNo: 7
-                Variable: name = v
-TreeNode Type: 2
-TreeNode LineNo: 11
   Function Declaration: name = main, return type = void
-TreeNode Type: 4
-TreeNode LineNo: 11
-    Type: void
-TreeNode Type: 3
-TreeNode LineNo: 11
-    Parameter: name = void, type = void
-TreeNode Type: 4
-TreeNode LineNo: 11
-      Type: void
-TreeNode Type: 0
-TreeNode LineNo: 16
+    Void Parameter
     Compound Statement:
-TreeNode Type: 2
-TreeNode LineNo: 13
-      Variable Declaration: name = x, type = void
-TreeNode Type: 4
-TreeNode LineNo: 13
-        Type: int
-TreeNode Type: 2
-TreeNode LineNo: 13
-      Variable Declaration: name = y, type = void
-TreeNode Type: 4
-TreeNode LineNo: 13
-        Type: int
-TreeNode Type: 1
-TreeNode LineNo: 14
+      Variable Declaration: name = x, type = int
+      Variable Declaration: name = y, type = int
       Assign:
-TreeNode Type: 1
-TreeNode LineNo: 14
         Variable: name = x
-TreeNode Type: 1
-TreeNode LineNo: 14
-        Printing CallK Node
-Function Name: input
-First Child: (nil)
-Call: function name = input
-TreeNode Type: 1
-TreeNode LineNo: 14
+        Call: function name = input
       Assign:
-TreeNode Type: 1
-TreeNode LineNo: 14
         Variable: name = y
-TreeNode Type: 1
-TreeNode LineNo: 14
-        Printing CallK Node
-Function Name: input
-First Child: (nil)
-Call: function name = input
-TreeNode Type: 1
-TreeNode LineNo: 15
-      Printing CallK Node
-Function Name: y
-First Child: 0xaaaaf28a3680
-Call: function name = y
-TreeNode Type: 1
-TreeNode LineNo: 15
-        Printing CallK Node
-Function Name: y
-First Child: 0xaaaaf28a35a0
-Call: function name = y
-TreeNode Type: 1
-TreeNode LineNo: 15
+        Call: function name = input
+      Call: function name = output
+        Call: function name = gcd
           Variable: name = x
-TreeNode Type: 1
-TreeNode LineNo: 15
-          Variable: name = y
-TreeNode Type: 1
-TreeNode LineNo: 15
-          Variable: name = x
-TreeNode Type: 1
-TreeNode LineNo: 15
-          Variable: name = y
-TreeNode Type: 1
-TreeNode LineNo: 15
-        Printing CallK Node
-Function Name: y
-First Child: 0xaaaaf28a35a0
-Call: function name = y
-TreeNode Type: 1
-TreeNode LineNo: 15
-          Variable: name = x
-TreeNode Type: 1
-TreeNode LineNo: 15
-          Variable: name = y
-TreeNode Type: 1
-TreeNode LineNo: 15
-          Variable: name = x
-TreeNode Type: 1
-TreeNode LineNo: 15
           Variable: name = y

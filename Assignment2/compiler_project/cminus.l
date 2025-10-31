@@ -32,6 +32,7 @@ whitespace  [ \t]+
 "="             {return ASSIGN;}
 ">="            {return GE;}
 "<="            {return LE;}
+"!="            {return NE;}
 "<"             {return LT;}
 ">"             {return GT;}
 "+"             {return PLUS;}

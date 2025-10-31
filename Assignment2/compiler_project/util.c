@@ -198,7 +198,7 @@ void printTree( TreeNode * tree )
             case OpK: fprintf(listing,"Op: "); printToken(tree->attr.op,"\0"); break;
             case ConstK: fprintf(listing,"Const: %d\n",tree->attr.val); break;
             case IdK: fprintf(listing,"Variable: name = %s\n",tree->attr.name); break;
-            case ArrIdK: fprintf(listing,"Array Variable: name = %s\n",tree->attr.name); break;
+            case ArrIdK: fprintf(listing,"Variable: name = %s\n",tree->attr.name); break;
             case CallK:
                 fprintf(listing,"Call: function name = %s\n",tree->attr.name);
                 break;
@@ -218,11 +218,13 @@ void printTree( TreeNode * tree )
                           tree->type==Integer?"int":"void");
                   break;
               case ArrVarK:
-                  fprintf(listing,"Array Variable Declaration: name = %s, type = %s, size = %d\n",
-                          tree->attr.arr.name,
-                          tree->type==IntegerArray?"int[]":"void",
-                          tree->attr.arr.size);
+                  fprintf(listing,"Variable Declaration: name = %s, type = %s\n",tree->attr.arr.name,tree->type==Integer?"int[]":"void[]");
+                  INDENT;
+                  printSpaces();
+                  fprintf(listing,"Const: %d\n", tree->attr.arr.size);
+                  UNINDENT;
                   break;
+                  
               default: fprintf(listing,"Unknown DeclNode kind\n"); break;
           }
           break;
@@ -242,9 +244,14 @@ void printTree( TreeNode * tree )
                     fprintf(listing,"Void Parameter\n");
                     break;
                 }
-                fprintf(listing,"Array Parameter: name = %s, type = %s\n",
+                fprintf(listing,"Parameter: name = %s, type = %s\n",
                         tree->attr.name,
-                        tree->type==IntegerArray?"int[]":"void");
+                        tree->type==Integer?"int[]":"void");
+                
+                INDENT;
+                printSpaces();
+                fprintf(listing,"Const: %d\n", tree->attr.arr.size);
+                UNINDENT;
                 break;
               default: fprintf(listing,"Unknown ParamNode kind\n"); break;
           }

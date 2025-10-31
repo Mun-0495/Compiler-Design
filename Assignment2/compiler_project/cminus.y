@@ -77,7 +77,7 @@ var_decl    : type_spec saveName SEMI
                  { $$ = newDeclNode(ArrVarK);
                    $$->type = savedType; /* type */
                    $$->lineno = $2->lineno;
-                   $$->attr.arr.name = $2->attr.arr.name;
+                   $$->attr.arr.name = $2->attr.name;
                    $$->attr.arr.size = $4->attr.val;
                  }
             ;
@@ -205,16 +205,16 @@ exp         : var ASSIGN exp
             | simple_exp { $$ = $1; }
             ;
 var         : saveName
-                 { $$ = newExpNode(IdK);
-                   $$->attr.name = $1->attr.name;
-                 }
-            | saveName
-                 { $$ = newExpNode(ArrIdK);
-                   $$->attr.name = $1->attr.name;
-                 }
-              LBRACE exp RBRACE
-                 { $$->child[0] = $3;
-                 }
+                { 
+                  $$ = newExpNode(IdK);
+                  $$->attr.name = $1->attr.name;
+                }
+            | saveName LBRACE exp RBRACE
+                { 
+                  $$ = newExpNode(ArrIdK);
+                  $$->attr.name = $1->attr.name;
+                  $$->child[0] = $3;
+                }
             ;
 simple_exp  : add_exp LE add_exp
                  { $$ = newExpNode(OpK);
