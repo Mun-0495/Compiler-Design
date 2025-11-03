@@ -28,9 +28,12 @@ whitespace  [ \t]+
 "return"        {return RETURN;}
 "int"           {return INT;}
 "void"          {return VOID;}
-"="             {return ASSIGN;}
 "=="            {return EQ;}
+"="             {return ASSIGN;}
+">="            {return GE;}
+"<="            {return LE;}
 "<"             {return LT;}
+">"             {return GT;}
 "+"             {return PLUS;}
 "-"             {return MINUS;}
 "*"             {return TIMES;}
