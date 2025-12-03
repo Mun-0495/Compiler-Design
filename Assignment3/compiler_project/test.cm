@@ -1,0 +1,46 @@
+int func(void a, int b) {
+	return k;}
+int main (void)
+{
+	int x;
+	int y[3];
+	void z;
+	int c;
+	void d[4];
+	int e[1];
+	int
+		x;
+	int
+		y
+		;
+	void
+	x;
+	y[t] = func(z, x);
+	w;
+	w;
+	{int b;return;}
+	x + y;
+	a + y;
+	a + x;
+	w + w[3];
+	y[x];
+	y[y];
+	y[y[x]];
+	y[z];
+	y = e;
+	b(1, 2);
+	while (b(p, q(k, z), r)){ int a; a = b; i = j;}
+	x(a, b);
+	x +
+		y
+		+
+		5;
+	y
+		+ y
+		+ y;
+	if(x +
+		y)
+	{}
+	c = x + y;
+	return z;
+}

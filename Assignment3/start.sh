@@ -1,0 +1,1 @@
+docker run --name compiler2025 --rm -it -v "$PWD":/work -w /work cs-compiler-hw:1.0

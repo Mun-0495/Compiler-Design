@@ -1,0 +1,123 @@
+/* global variables */
+int G;
+int H[5];
+
+/* simple helper to exercise recursion and operators */
+int foo(int x)
+{
+  /* if-else with returns */
+  if (x == 0) return 1;
+  else return x + foo(x - 1);
+}
+
+/* nested if-else-if chain (dangling-else behavior) */
+int max3(int a, int b, int c)
+{
+  if (a > b)
+    if (a > c) return a;
+    else return c;
+  else if (b > c)
+    return b;
+  else
+    return c;
+}
+
+/* array sum: array parameter + while + return with expression */
+int sumArr(int a[], int n)
+{
+  int i;
+  int s;
+  i = 0;
+  s = 0;
+  while (i < n)
+  {
+    s = s + a[i];
+    i = i + 1;
+  }
+  return s;
+}
+
+/* write into array using expression in index; return constant */
+int modify(int a[], int n)
+{
+  /* use >= and != in one harmless branch */
+  if (n >= 1)
+  {
+    a[n - 1] = a[0];
+  }
+  else if (n != 0)
+  {
+    /* unreachable for normal positive n, but exercises operator */
+    a[0] = 0;
+  }
+  return 0;
+}
+
+/* void-return function with early returns and a call chain */
+void util(int a[], int n)
+{
+  if (n == 0) return;
+  else if (n < 0) return;
+  else
+  {
+    int t;
+    t = sumArr(a, n);
+    /* call output() with variable */
+    output(t);
+  }
+}
+
+/* a second scalar helper */
+int bar(int x, int y)
+{
+  if (x < y) return x;
+  else return y;
+}
+
+/* main with void parameter, local arrays/vars, calls, assignments */
+void main(void)
+{
+  int arr[10];
+  int i;
+  int r;
+
+  /* array index with expression */
+  arr[2 + 3] = 7;
+
+  /* I/O-like stubs: input()/output() are plain function calls */
+  i = input();
+
+  /* use global and local together */
+  G = i + 1;
+
+  /* call with literal and variable arguments */
+  r = sumArr(arr, 10);
+
+  /* nested if-else-if, array use with expression inside index, 
+     arithmetic with TIMES/OVER/MINUS/PLUS */
+  if (i < 0)
+    output(0);
+  else if (i == 0)
+  {
+    arr[i] = 1;
+    output(arr[i]);
+  }
+  else
+  {
+    /* index uses expression: i + 1*2 */
+    arr[i + 1 * 2] = foo(i);
+    output(max3(i, r, arr[4]));
+    /* more complex index with parentheses */
+    output(arr[(i - 1) + 2 * (i - 1)]);
+  }
+
+  /* exercise additional calls and returns */
+  util(arr, 10);
+  modify(arr, 10);
+  output(bar(G, r));
+
+  /* plain return; for void */
+  return;
+}
+
+/* end of file */
